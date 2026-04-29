@@ -1,0 +1,116 @@
+/* FirstTimeFlow Styles */
+
+.ftf-container {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  animation: fadeIn 400ms ease;
+}
+
+.ftf-card {
+  width: 420px;
+  max-width: 90vw;
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.ftf-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.ftf-logo-char {
+  font-family: var(--font-mono);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 30px var(--accent-cyan-glow), 0 0 60px rgba(0, 240, 255, 0.1);
+  line-height: 1;
+}
+
+.ftf-logo-text {
+  font-family: var(--font-ui);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+}
+
+.ftf-tagline {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.ftf-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  animation: fadeIn 300ms ease;
+}
+
+.ftf-step-icon {
+  font-size: 32px;
+}
+
+.ftf-step-title {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ftf-step-desc {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ftf-error {
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 23, 68, 0.1);
+  border: 1px solid rgba(255, 23, 68, 0.2);
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--accent-red);
+  text-align: center;
+}
+
+.ftf-btn {
+  min-width: 160px;
+  padding: 10px 24px;
+  font-size: 14px;
+}
+
+.ftf-choice-btns {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.ftf-btn--primary {
+  font-size: 15px;
+  padding: 12px 24px;
+}

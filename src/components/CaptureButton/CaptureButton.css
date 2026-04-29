@@ -1,0 +1,108 @@
+/* CaptureButton Styles */
+
+.capture-btn {
+  width: var(--capture-btn-size);
+  height: var(--capture-btn-size);
+  border-radius: 50%;
+  border: 3px solid var(--accent-pink);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  animation: glowPulse 3s ease-in-out infinite;
+  position: relative;
+  z-index: var(--z-base);
+  flex-shrink: 0;
+}
+
+.capture-btn:hover:not(.capture-btn--disabled) {
+  background: rgba(233, 69, 96, 0.15);
+  transform: scale(1.05);
+  border-color: #ff6b81;
+}
+
+.capture-btn:active:not(.capture-btn--disabled) {
+  transform: scale(0.95);
+  background: rgba(233, 69, 96, 0.3);
+}
+
+.capture-btn--disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  animation: none;
+}
+
+.capture-btn-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.capture-btn-wrapper--mobile {
+  position: fixed;
+  bottom: calc(var(--space-xl) + 60px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-panel);
+}
+
+.gallery-preview-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--bg-surface);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  position: absolute;
+  right: calc(100% + 16px);
+}
+
+.gallery-preview-btn:hover {
+  border-color: var(--accent-cyan);
+  transform: scale(1.05);
+}
+
+.gallery-preview-html {
+  font-family: var(--font-mono);
+  font-size: 1.5px;
+  line-height: 1;
+  white-space: pre;
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+.capture-btn-inner {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  background: var(--accent-pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.capture-btn:hover:not(.capture-btn--disabled) .capture-btn-inner {
+  background: #ff6b81;
+}
+
+.capture-btn-icon {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.capture-btn-icon svg {
+  width: 100%;
+  height: 100%;
+}

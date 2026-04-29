@@ -1,0 +1,60 @@
+/* ResultOverlay Styles */
+
+.result-overlay {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-overlay);
+  animation: fadeIn 300ms ease;
+}
+
+.result-actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+}
+
+.result-btn {
+  font-size: 12px;
+  padding: 8px 14px;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.result-btn svg {
+  flex-shrink: 0;
+}
+
+.result-toast {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 16px;
+  background: var(--accent-green);
+  color: var(--bg-primary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  animation: fadeIn 200ms ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .result-overlay {
+    bottom: calc(var(--space-xl) + 100px);
+  }
+
+  .result-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90vw;
+  }
+}

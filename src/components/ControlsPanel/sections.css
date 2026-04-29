@@ -1,0 +1,214 @@
+/* ============================================================
+   ControlsPanel — Section-specific styles
+   Preset cards, color picker, charset grid, etc.
+   ============================================================ */
+
+/* --- Preset Grid (StyleSection) --- */
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.preset-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--space-sm) var(--space-xs);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  font-family: var(--font-ui);
+}
+
+.preset-card:hover {
+  border-color: var(--border-accent);
+  background: var(--bg-tertiary);
+}
+
+.preset-card--active {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.06);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.1);
+}
+
+.preset-card--custom {
+  border-style: dashed;
+}
+
+.preset-emoji {
+  font-size: 18px;
+}
+
+.preset-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.preset-card--active .preset-name {
+  color: var(--accent-cyan);
+}
+
+/* Preset hover preview (AF-110) */
+.preset-preview {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.preset-preview-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-primary);
+  white-space: pre;
+  margin: 0;
+}
+
+/* --- Color Picker (LookSection) --- */
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.color-picker-input {
+  width: 36px;
+  height: 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.color-picker-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker-input::-webkit-color-swatch {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+.color-picker-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* --- Charset Grid (CharacterSection) --- */
+.charset-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.charset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-ui);
+}
+
+.charset-btn:hover {
+  border-color: var(--border-accent);
+}
+
+.charset-btn--active {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 240, 255, 0.06);
+}
+
+.charset-preview {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.charset-label {
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+/* --- Custom Character Input --- */
+.custom-char-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.custom-char-input {
+  width: 40px;
+  height: 32px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.custom-char-input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.1);
+}
+
+.custom-char-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* --- Slider Group --- */
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* --- Status Section Colors --- */
+.status-fps {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-fps--good { color: var(--accent-green); }
+.status-fps--mid { color: var(--accent-amber); }
+.status-fps--low { color: var(--accent-red); }
+
+.status-mode {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-mode--stable { color: var(--accent-green); }
+.status-mode--degraded { color: var(--accent-amber); }

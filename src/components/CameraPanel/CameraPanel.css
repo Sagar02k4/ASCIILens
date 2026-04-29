@@ -1,0 +1,113 @@
+/* CameraPanel Styles */
+
+.camera-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--bg-primary);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.camera-panel--mobile {
+  width: 100%;
+}
+
+/* LIVE indicator (AF-009, AF-010) */
+.live-indicator {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 4px 10px 4px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 23, 68, 0.15);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+  z-index: var(--z-base);
+  backdrop-filter: blur(8px);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  animation: livePulse 1.5s ease-in-out infinite; /* AF-010 */
+}
+
+.live-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent-red);
+  text-transform: uppercase;
+}
+
+/* Captured indicator (AF-052) */
+.captured-indicator {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  z-index: var(--z-base);
+  backdrop-filter: blur(8px);
+}
+
+.captured-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-cyan);
+}
+
+/* ASCII output (AF-006) */
+.ascii-output {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.ascii-pre {
+  font-family: var(--font-mono);
+  /* The formula ensures the text grid fills the container regardless of density/resolution */
+  /* factor: 100cqw / columns * 1.66 (stretch horizontal into vertical for font size) */
+  font-size: calc((100cqw - var(--space-sm)*2) / var(--cols, 80) * 1.66);
+  line-height: 1.1;
+  letter-spacing: 0;
+  white-space: pre;
+  user-select: text;
+  margin: 0;
+  text-align: center;
+}
+
+.ascii-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--text-muted);
+}
+
+.ascii-placeholder-icon {
+  font-size: 48px;
+  opacity: 0.3;
+}
+
+.ascii-placeholder p {
+  font-family: var(--font-ui);
+  font-size: 14px;
+}

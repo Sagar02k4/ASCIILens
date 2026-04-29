@@ -1,0 +1,29 @@
+/* FlashEffect Styles */
+
+/* AF-046: Flash overlay — white, fades out over exactly 100ms */
+.flash-overlay {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: var(--z-flash);
+  animation: flashEffect 100ms ease-out forwards; /* EXACT 100ms */
+  pointer-events: none;
+}
+
+/* AF-048: Shimmer — gradient sweep over exactly 250ms */
+.shimmer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-flash);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 240, 255, 0.15) 25%,
+    rgba(233, 69, 96, 0.1) 50%,
+    rgba(0, 240, 255, 0.15) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerEffect 250ms ease-out forwards; /* EXACT 250ms */
+}

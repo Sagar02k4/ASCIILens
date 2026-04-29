@@ -1,0 +1,80 @@
+/* MobileBottomSheet Styles */
+
+.mobile-sheet-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-sheet-toggle {
+    display: flex;
+    position: fixed;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    z-index: var(--z-panel);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .mobile-sheet-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--border-accent);
+  }
+
+  .mobile-sheet-toggle svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.mobile-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-end;
+}
+
+.mobile-sheet {
+  width: 100%;
+  max-height: 70vh;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border-light);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  animation: slideUp 300ms ease;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+}
+
+.mobile-sheet-handle {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-sm) 0;
+  cursor: pointer;
+}
+
+.mobile-sheet-handle-bar {
+  width: 40px;
+  height: 4px;
+  background: var(--text-muted);
+  border-radius: 2px;
+}
+
+.mobile-sheet-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md) var(--space-lg) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}

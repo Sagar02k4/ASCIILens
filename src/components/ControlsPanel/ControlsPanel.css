@@ -1,0 +1,138 @@
+/* ControlsPanel Styles */
+
+.controls-panel {
+  width: var(--panel-width);
+  height: 100vh;
+  background: var(--bg-panel);
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
+  z-index: var(--z-panel);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.controls-panel--open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.controls-panel--closed {
+  transform: translateX(100%);
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  pointer-events: none;
+}
+
+.controls-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.controls-panel-title {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.controls-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.controls-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* Toggle Button */
+.controls-toggle {
+  position: fixed;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: calc(var(--z-panel) + 1);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(12px);
+}
+
+.controls-toggle:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border-color: var(--border-accent);
+}
+
+.controls-toggle--open {
+  right: calc(var(--panel-width) + var(--space-md));
+}
+
+.controls-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Section shared styles */
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.control-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.control-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.control-value {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  min-width: 30px;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .controls-panel {
+    display: none;
+  }
+  .controls-toggle {
+    display: none;
+  }
+}
